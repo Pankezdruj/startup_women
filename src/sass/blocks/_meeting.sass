@@ -1,13 +1,18 @@
 .meeting
-    background: url('../../img/meeting/bg_meeting.png')
+    background: url('../../img/meeting/bg_meeting.png') left center/cover no-repeat
+    color: #000000
+    padding: 158px 0 84px 0
     &__block
-        margin-top: 158px
         display: flex
         justify-content: space-around
+        padding: 0 0 0 0
     &__wrapper
         display: flex
         flex-wrap: wrap
         width: 423px
+        &_big-width
+            width: 544px
+            margin-left: 80px
     &__points
         display: flex
         flex-wrap: wrap
@@ -20,27 +25,30 @@
         height: 2px
         border-radius: 100%
     &__title
+        color: #000000
         margin-left: 30px
         width: 111px
-        color: #000000
         font-size: 36px
         font-weight: 400
-        line-height: 46px
+        line-height: 43px
         margin-top: -10px
-        &_second
-            line-height: 34px
-            width: 560px
+        &_big-width
+            line-height: 39px
+            width: 502px
             margin-left: 0
-            font-size: 30px
+            font-size: 36px
         span
+            color: #000000
             font-weight: 700
     &__descr
         line-height: 18px
         color: #797c80
         font-size: 18px
         font-weight: 400
-        margin-top: 15px
-        &_second
+        margin-top: -41px
+        &_big-width
+            margin-top: 40px
             width: 563px
-            margin-top: 30px
+            line-height: 30px
+
             
