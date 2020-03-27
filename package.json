@@ -1,7 +1,6 @@
 {
   "name": "startup_women",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -27,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/Pankezdruj/startup_women/issues"
   },
-  "homepage": "https://github.com/Pankezdruj/startup_women#readme"
+  "homepage": "https://github.com/Pankezdruj/startup_women#readme",
+  "description": ""
 }
