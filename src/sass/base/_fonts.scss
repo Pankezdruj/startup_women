@@ -6,7 +6,7 @@
         url('../fonts/MullerRegular.woff2') format('woff2'),
         url('../fonts/MullerRegular.woff') format('woff'),
         url('../fonts/MullerRegular.ttf') format('truetype');
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
 }
     
@@ -18,7 +18,7 @@
         url('../fonts/MullerBlack.woff2') format('woff2'),
         url('../fonts/MullerBlack.woff') format('woff'),
         url('../fonts/MullerBlack.ttf') format('truetype');
-    font-weight: 900;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -30,6 +30,42 @@
         url('../fonts/MullerBold.woff2') format('woff2'),
         url('../fonts/MullerBold.woff') format('woff'),
         url('../fonts/MullerBold.ttf') format('truetype');
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
-}       
+}   
+
+@font-face {
+    font-family: 'Muller';
+    src: url('MullerExtraBold.eot');
+    src: local('Muller ExtraBold'), local('MullerExtraBold'),
+        url('../fonts/MullerExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MullerExtraBold.woff2') format('woff2'),
+        url('../fonts/MullerExtraBold.woff') format('woff'),
+        url('..fonts/MullerExtraBold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Muller';
+    src: url('MullerMedium.eot');
+    src: local('Muller Medium'), local('MullerMedium'),
+        url('../fonts/MullerMedium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MullerMedium.woff2') format('woff2'),
+        url('../fonts/MullerMedium.woff') format('woff'),
+        url('../fonts/MullerMedium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('PlayfairDisplay-Bold.eot');
+    src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'),
+        url('../fonts/PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/PlayfairDisplay-Bold.woff') format('woff'),
+        url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
