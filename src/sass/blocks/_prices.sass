@@ -1,0 +1,52 @@
+.prices
+    h3 
+        text-align: center
+        margin-top: 87px
+    &__wrapper
+        display: flex
+        justify-content: center
+        margin-top: 74px
+    &__item
+        width: 294px
+        height: 499px    
+        position: relative
+        padding: 46px 41px 51px 45px
+        &:hover
+            transition: 0.5s all
+            background-color: #f9593a
+            border-radius: 6%
+            background-image: linear-gradient(-43deg, #7f12ab 0%, #da16c9 100%)
+            .prices__status
+                color: #fff;
+            .prices__old-price
+                color: #fff;
+            .prices__new-price
+                  color: #fff;
+            .prices__descr
+                color: #fff;   
+            .button
+                background-image: none
+                background-color: #fff
+                color: #8b13af           
+    &__status
+        color: #212121
+        font-size: 12px
+        font-weight: 500
+        text-transform: uppercase
+        text-align: center
+    &__old-price
+        color: #212121
+        font-size: 40px
+        font-weight: 400
+        text-decoration: line-through  
+        text-align: center  
+    &__new-price
+        color: #212121
+        font-size: 50px
+        font-weight: 500  
+        text-align: center
+    &__descr
+        color: #7b7e82
+        font-size: 13px
+        font-weight: 400
+        text-align: center  

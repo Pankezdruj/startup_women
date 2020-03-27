@@ -13,15 +13,39 @@
         &:first-child(n)
             margin: 0 15px 15px 0
     &__overlay
-        box-shadow: -18px 32px 76px rgba(0, 0, 0, 0.3)
-        background-color: #000000
-        background-image: linear-gradient(to top, #7f12ab 0%, #da16c9 100%)
-        opacity: 0.89
+        width: 263px
+        height: 268px
+        z-index: 2
+        position: relative
     &__name
         color: #ffffff
         font-size: 24px
         font-weight: 500
-    &__descr
+        line-height: 25px
+        margin-bottom: 5px
+    &__text
         color: #ffffff
         font-size: 16px
         font-weight: 400
+    &__descr
+        display: none
+        top: -267px
+        width: 263px
+        height: 268px
+        position: relative
+        box-shadow: -18px 32px 76px rgba(0, 0, 0, 0.3)
+        background-color: #000000
+        background-image: linear-gradient(to top, #7f12ab 0%, #da16c9 100%)
+        opacity: 0.89
+        padding: 38px 42px 56px 25px
+        text-align: left
+    &__photo
+        width: 263px
+        height: 268px
+        background: #000
+        img 
+            display: block
+        &:hover
+            .people__descr
+                display: block
+    
