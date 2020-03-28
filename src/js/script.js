@@ -82,17 +82,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
 =======
     const burger = document.getElementsByClassName('burger')[0],
+    menuOverlay = document.getElementsByClassName('menu')[0],
     menuOverlay = document.getElementsByClassName('window')[0],
     menuItems = document.getElementsByClassName('menu__item');
 
     burger.addEventListener('click', () => {
         burger.classList.toggle('burger_active');
+        menuOverlay.classList.toggle('menu_active');
         menuOverlay.classList.toggle('window_active');
     });
 
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
             burger.classList.remove('burger_active');
+            menuOverlay.classList.remove('menu_active'); 
             menuOverlay.classList.remove('window_active'); 
         });
     });
