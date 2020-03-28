@@ -33,4 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
             modalConfirmation.classList.remove('overlay__modal_active');
         });
     }
+
+
+
 });
