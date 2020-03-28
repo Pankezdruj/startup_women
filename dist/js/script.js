@@ -52,6 +52,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 modalReservation.classList.remove('overlay__modal_active');
                 body.style.overflow = 'hidden';
             })
+            modalConfirmation.classList.add('overlay__modal_active');
+            overlay.classList.add('overlay_active');
+            modalReservation.classList.remove('overlay__modal_active');
+            body.style.overflow = 'hidden';
+            fetch('mailer/smart.php', {
+                method: 'POST',
+                body: form.serialize(),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then( response => response.json())
+            .then( myJSON => console.log(myJSON))
             .catch( e => console.error(e));
         });
     }
