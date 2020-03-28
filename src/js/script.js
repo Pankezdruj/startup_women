@@ -33,4 +33,20 @@ window.addEventListener('DOMContentLoaded', () => {
             modalConfirmation.classList.remove('overlay__modal_active');
         });
     }
+
+    const burger = document.getElementsByClassName('burger')[0],
+    menuOverlay = document.getElementsByClassName('menu')[0],
+    menuItems = document.getElementsByClassName('menu__item');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('burger_active');
+        menuOverlay.classList.toggle('menu_active');
+    });
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            burger.classList.remove('burger_active');
+            menuOverlay.classList.remove('menu_active'); 
+        });
+    });
 });
