@@ -1,0 +1,74 @@
+.form button
+    margin-top: 5px
+.overlay
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    &__blackout
+        display: none
+        position: fixed
+        top: 0
+        width: 100%
+        height: 100vh
+        background-color: #000000
+        opacity: 0.56
+    &__element
+        display: none
+        padding: 38px 40px 40px 40px
+        position: absolute
+        transform: translate(-50%, -50%)
+        width: 380px
+        background-color: #f2f2f2
+        text-align: center
+        color: #0d0d0d
+        &_min
+            max-height: 140px
+        &_strachable
+            min-height: 40px
+    &__header
+        font-size: 18px
+        font-weight: 700
+    &__subheader
+        font-size: 15px
+        font-weight: 500
+        margin: 11px 0 10px 0
+    &__form
+        input
+            border: none
+            margin: 15px auto
+    &__close
+        width: 21px
+        height: 21px
+        cursor: pointer
+        position: absolute
+        left: 400px
+        top: 0
+        &:after
+            content: ''
+            display: block
+            height: 21px
+            width: 5px
+            position: absolute
+            background-color: #c70101
+            transform: skew(45deg)
+            border-radius: 30%
+        &:before
+            content: ''
+            display: block
+            height: 21px
+            width: 5px
+            position: absolute
+            background-color: #c70101
+            transform: skew(-45deg)
+            border-radius: 30%
+    &__error
+        color: #ff0000
+        margin: 10px auto -30px auto
+        display: block
+        height: 40px
+        font-size: 13px
+input.overlay__error
+    border: 2px solid #ff0000
+
+                            
