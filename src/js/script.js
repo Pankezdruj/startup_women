@@ -7,6 +7,7 @@ const btnsReservation = document.querySelectorAll('.button_book'),
     crosses = document.querySelectorAll('.overlay__cross'),
     body = document.getElementsByTagName('body')[0];
 
+
 window.addEventListener('DOMContentLoaded', () => {
     new WOW().init();
     for(let i = 0; i < btnsReservation.length; i++){
@@ -23,6 +24,16 @@ window.addEventListener('DOMContentLoaded', () => {
             overlay.classList.add('overlay_active');
             modalReservation.classList.remove('overlay__modal_active');
             body.style.overflow = 'hidden';
+            fetch('mailer/smart.php', {
+                method: 'POST',
+                body: form.serialize(),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then( response => response.json())
+            .then( myJSON => console.log(myJSON))
+            .catch( e => console.error(e));
         });
     }
     for(let i = 0; i < crosses.length; i++){
