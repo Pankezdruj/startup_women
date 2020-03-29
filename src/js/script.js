@@ -18,8 +18,43 @@ const btnsReservation = document.querySelectorAll('.button_book'),
     body = document.getElementsByTagName('body')[0];
 
 
+const constraints = {
+    Email: {
+        email: {
+            message: "is not valid"
+        },
+        presence: {
+            allowEmpty: false
+        }
+    },
+    phone: {
+        numericality: {
+            onlyInteger: true,
+            notValid: "is not valid"
+        },
+        length: {
+            minimum: 8,
+            tooShort: "is too short, must be minimum %{count} characters"
+        },
+        presence: {
+            allowEmpty: false
+        }
+    },
+    name: {
+        length: {
+            minimum: 2,
+            tooShort: "is too short, must be minimum %{count} characters"
+        },
+        presence: {
+            allowEmpty: false
+        }
+    }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     new WOW().init();
+
+
     for(let i = 0; i < btnsReservation.length; i++){
         btnsReservation[i].addEventListener('click', () => {
             modalReservation.classList.add('overlay__modal_active');
@@ -30,42 +65,64 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < forms.length; i++){
         forms[i].addEventListener('submit', e => {
             e.preventDefault();
-            const formData = Object.fromEntries(new FormData(e.target).entries());
-            const nameJSON = JSON.stringify(formData.name);
-            const nameURL = JSON_to_URLEncoded(nameJSON, 'name');
-            const emailJSON = JSON.stringify(formData.email);
-            const emailURL = JSON_to_URLEncoded(emailJSON, 'email');
-            const phoneJSON = JSON.stringify(formData.phone);
-            const phoneURL = JSON_to_URLEncoded(phoneJSON, 'phone');
-            const data = `${nameURL}&${emailURL}&${phoneURL}`;
-            fetch('../mailer/smart.php', {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
-            })
-            .then((response) => {
-                console.log(response);
-                modalConfirmation.classList.add('overlay__modal_active');
-                overlay.classList.add('overlay_active');
-                modalReservation.classList.remove('overlay__modal_active');
-                body.style.overflow = 'hidden';
-            })
-            modalConfirmation.classList.add('overlay__modal_active');
-            overlay.classList.add('overlay_active');
-            modalReservation.classList.remove('overlay__modal_active');
-            body.style.overflow = 'hidden';
-            fetch('mailer/smart.php', {
-                method: 'POST',
-                body: form.serialize(),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then( response => response.json())
-            .then( myJSON => console.log(myJSON))
-            .catch( e => console.error(e));
+            //inputs 
+            const emailInput = e.target.querySelector('.form__input-email'),
+                nameInput = e.target.querySelector('.form__input-name'),
+                phoneInput = e.target.querySelector('.form__input-phone');
+            //error fields in form
+            const emailErrorField = e.target.getElementsByClassName('error-email')[0],
+                nameErrorField = e.target.getElementsByClassName('error-name')[0],
+                phoneErrorField = e.target.getElementsByClassName('error-phone')[0];
+            //get form data
+            let formData = Object.fromEntries(new FormData(e.target).entries());
+            formData = {
+                name: validate.prettify(formData.name),
+                Email: formData.email,
+                phone: formData.phone
+            }
+            if (!validate(formData, constraints)) {
+                //all valid
+
+                emailErrorField.textContent = "";
+                phoneErrorField.textContent = "";
+                nameErrorField.textContent = "";
+
+                const nameJSON = JSON.stringify(formData.name);
+                const nameURL = JSON_to_URLEncoded(nameJSON, 'name');
+                const emailJSON = JSON.stringify(formData.email);
+                const emailURL = JSON_to_URLEncoded(emailJSON, 'email');
+                const phoneJSON = JSON.stringify(formData.phone);
+                const phoneURL = JSON_to_URLEncoded(phoneJSON, 'phone');
+                const data = `${nameURL}&${emailURL}&${phoneURL}`;
+                fetch('../mailer/smart.php', {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    }
+                })
+                .then((response) => {
+                    modalConfirmation.classList.add('overlay__modal_active');
+                    overlay.classList.add('overlay_active');
+                    modalReservation.classList.remove('overlay__modal_active');
+                    body.style.overflow = 'hidden';
+                })
+            } else {
+                //smth not valid
+                const notValid = validate(formData, constraints);
+                if (notValid.Email) {
+                    emailErrorField.textContent = notValid.Email[1] ? notValid.Email[1] : notValid.Email[0];
+                    emailInput.classList.add('form__error');
+                } else emailErrorField.textContent = "";
+                if (notValid.phone) {
+                    phoneErrorField.textContent = notValid.phone[1] ? notValid.phone[1] : notValid.phone[0];
+                    phoneInput.classList.add('form__error');
+                } else phoneErrorField.textContent = "";
+                if (notValid.name){
+                    nameErrorField.textContent = notValid.name[1] ? notValid.name[1] : notValid.name[0];
+                    nameInput.classList.add('form__error');
+                } else nameErrorField.textContent = "";
+            }
         });
     }
     for(let i = 0; i < crosses.length; i++){
@@ -88,7 +145,6 @@ window.addEventListener('DOMContentLoaded', () => {
         menuOverlay.classList.toggle('menu_active');
         menuOverlay.classList.toggle('window_active');
     });
-    console.log(menuItems);
 
     for (let i = 0; i < menuItems.length; i++){
         menuItems[i].addEventListener('click', () => {
@@ -97,4 +153,17 @@ window.addEventListener('DOMContentLoaded', () => {
             menuOverlay.classList.remove('window_active'); 
         });
     }
+    // flags in the input
+    function flagsInput(selector){
+        let input = document.querySelector(selector);
+        window.intlTelInput(input,{
+            utilsScript: "utils.js",
+            autoPlaceholder: "off",
+            // initialCountry: "auto",
+            separateDialCode: true,
+            dropdownContainer: document.body
+        });
+    }
+    flagsInput("#phone");
+    flagsInput("#phone-row");
 });

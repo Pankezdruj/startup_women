@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/intlTelInput.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>STARTUP WOMEN</title>
 </head>
@@ -477,15 +478,23 @@
         <div class="container">
             <h3 class="section-header">Reserve a place in the exhibition area</h3>
             <form action="#" class="form" id="reservation-form">
-                <input class="button form__input" name="name" placeholder="Name">
-                <input class="button form__input" name="email" placeholder="Email">
-                <input class="button form__input" name="phone" placeholder="Phone">
+                <div class="reserve__form-block">
+                    <input class="button form__input form__input-name" name="name" placeholder="Name">
+                    <p class="error error-name"></p>
+                </div>
+                <div class="reserve__form-block">
+                    <input class="button form__input form__input-email" name="email" placeholder="Email">
+                    <p class="error error-email"></p>
+                </div>
+                <div class="reserve__form-block">
+                    <div id="phone-row-container" class=""></div><input id="phone-row" class="button form__input form__input-phone" name="phone" placeholder="Phone"></div>
+                    <p class="error error-phone"></p>
+                </div>
                 <button class="button form__button">BOOK NOW</button>
             </form>
         </div>
     </section>
-    <section class="partners">
-        <div class="container">
+    <section class="partners">        <div class="container">
             <h3 class="section-header">Our partners</h3>
             <div class="partners__wrapper">
                 <img src="img/partners/logo_100.png" alt="logo_100">
@@ -512,13 +521,16 @@
         </div>
     </footer>  
     <div class="overlay">
-        <div class="overlay__modal overlay__modal-reservation animated fadeIn">
+        <div class="overlay__modal overlay__modal-reservation animated fadeIn" id="overlay">
             <div class="overlay__cross">&times;</div>
             <h3 class="section-header">Reserve a place in the exhibition area</h3>
             <form action="#" class="form" id="reservation-form">
-                <input class="button form__input" name="name" placeholder="Name">
-                <input class="button form__input" name="email" placeholder="Email">
-                <input class="button form__input" name="phone" placeholder="Phone">
+                <input class="button form__input form__input-name" name="name" placeholder="Name">
+                <p class="error error-name"></p>
+                <input class="button form__input form__input-email" name="email" placeholder="Email">
+                <p class="error error-email"></p>
+                <div id="phone-container"></div> <input id="phone" type="tel" class="button form__input form__input-phone" name="phone" placeholder="Phone"></div>
+                <p class="error error-phone"></p>
                 <div class="loadingio-spinner-spinner-qnu7ocv4sw"><div class="ldio-h2jvonvd9lu">
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                     </div></div>
@@ -543,7 +555,10 @@
         <a class="menu__item" href="#speakers">Speakers</a>
         <a class="menu__item" href="#tickets">Tickets</a>
     </div>
+<script src="js/intlTelInput.min.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/validate.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

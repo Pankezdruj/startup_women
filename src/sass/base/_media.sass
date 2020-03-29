@@ -3,17 +3,21 @@
         .header
             flex-direction: column
             justify-content: space-between
+            padding-top: 30px
             &__menu
-                justify-content: space-around
+                justify-content: space-between
                 width: 100%
-                margin-top: 20px
+                margin-top: 60px
+                font-size: 22px
             &__phone
-                margin: 20px auto 0 auto   
-                font-size: 20px
+                margin-top: 50px
+                display: block
+                text-align: right   
+                font-size: 24px
             &__logo
                  margin: 0 auto
     &__text
-        margin-top: 150px             
+        margin-top: 100px             
     .meeting
         padding: 40px 0 30px 0
         &__descr
@@ -107,6 +111,11 @@
             font-size: 17px               
 @media (max-width: 991px)
     .promo
+        .header
+            &__menu
+                font-size: 15px
+            &__phone
+                font-size: 20px    
         &__title1
             font-size: 70px
     .meeting
@@ -145,6 +154,7 @@
         &__descr
             text-align: left
             width: 300px
+@media (max-width: 768px)
     .control
         min-height: 180px
         padding: 50px 0 20px 0
@@ -290,12 +300,31 @@
         input
             margin: 20px auto 
         .button
+            margin: 20px auto   
+    .control
+        &__quote
+            font-size: 33px     
+@media (max-width: 575px)
+    .promo
+        &__dates
+            font-size: 22px
+        &__title2
+            font-size: 35px
+        &__title1
+            font-size: 45px
+        &__title3
+            font-size: 1.5rem            
+        .header
+            padding-top: 50px
+            &__menu
+                display: none
+                font-size: 33px 
+            &__phone
+                text-align: center
+                margin-top: 25px
+        .button
+            width: 100%                                                                           
             margin: 20px auto    
-    .overlay
-        &__cross
-            line-height: 55px
-            top: 4px
-            font-size: 80px  
     .partners
         &__wrapper
             margin-top: 0
@@ -303,11 +332,10 @@
             flex-wrap: wrap
             img
                 width: 200px
-                margin: 10px 10px 10px 10px
-@media (max-width: 575px)                                                           
+                margin: 10px 10px 10px 10px                                                          
     .meeting
         &__block
-            margin-top: -80px
+            margin-top: 0px
             flex-wrap: wrap
         &__title
             width: 280px
@@ -330,6 +358,18 @@
             justify-content: center
             margin-left: 0
     .dream
+        img
+            width: 100%
+        &__text
+            h3.section-header 
+                font-size: 25px
+                margin-top: 10px
+                width: 100%
+        &__name
+            width: 100%            
+        &__descr
+            width: 100%
+            font-size: 17px
         &__wrapper
             flex-wrap: wrap
             justify-content: center
@@ -341,7 +381,13 @@
         &__timetable
             margin-top: 30px
             margin-bottom: 30px
+            font-size: 16px
+    .control
+        &__quote
+            font-size: 25px        
     .mobile
+        &__subtitle
+            font-size: 20px
         &__wrapper
             width: 300px
             flex-wrap: wrap
@@ -350,6 +396,7 @@
         &__descr
             top: 0
             left: 0
+            margin-top: 0
         &__img
             display: none
         &__iphone
@@ -358,6 +405,7 @@
             display: none
         &__item
             margin: 0 auto
+            line-height: 39px
     .month
         &__descr
             font-size: 20px
@@ -392,19 +440,41 @@
             justify-content: center
         &__element
             width: 200px
-    
-
-            font-size: 33px  
+            font-size: 13px  
     .menu
         a
             font-size: 18px
             margin: 15px 0         
-
-@media ( max-width:575px  )
-    .promo
-        .header
-            &__menu
-                display: none
-                font-size: 33px                                                                 
+    .prices
+        h3.section-header 
+            font-size: 25px   
+        &__status
+            font-size: 20px
+        &__old-price
+            font-size: 25px
+        &__new-price
+            font-size: 35px
+        &__wrapper
+            button
+                width: 66%
+        &__descr
+            &_large-text
+                button
+                    width: 73%      
+    .overlay
+        &__modal
+            &_active
+                width: 85%
+                h3.section-header 
+                    font-size: 25px
+        form
+            input
+                width: 100%
+        button
+            width: 100%                                                           
+        &__cross
+            left: -25px
+            top: -25px
+                                                                
 
                                                                                                                                            
