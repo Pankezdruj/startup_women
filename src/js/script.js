@@ -77,9 +77,10 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
     const burger = document.getElementsByClassName('burger')[0],
     menuOverlay = document.getElementsByClassName('menu')[0],
-    menuOverlay = document.getElementsByClassName('window')[0],
     menuItems = document.getElementsByClassName('menu__item');
 
     burger.addEventListener('click', () => {
@@ -87,12 +88,13 @@ window.addEventListener('DOMContentLoaded', () => {
         menuOverlay.classList.toggle('menu_active');
         menuOverlay.classList.toggle('window_active');
     });
+    console.log(menuItems);
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
+    for (let i = 0; i < menuItems.length; i++){
+        menuItems[i].addEventListener('click', () => {
             burger.classList.remove('burger_active');
             menuOverlay.classList.remove('menu_active'); 
             menuOverlay.classList.remove('window_active'); 
         });
-    });
+    }
 });
