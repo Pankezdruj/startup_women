@@ -30,8 +30,11 @@ const constraints = {
     phone: {
         numericality: {
             onlyInteger: true,
-            greaterThan: 100000000,
             notValid: "is not valid"
+        },
+        length: {
+            minimum: 8,
+            tooShort: "is too short, must be minimum %{count} characters"
         },
         presence: {
             allowEmpty: false
@@ -66,6 +69,10 @@ window.addEventListener('DOMContentLoaded', () => {
             const emailInput = e.target.querySelector('.form__input-email'),
                 nameInput = e.target.querySelector('.form__input-name'),
                 phoneInput = e.target.querySelector('.form__input-phone');
+            //error fields in form
+            const emailErrorField = e.target.getElementsByClassName('error-email')[0],
+                nameErrorField = e.target.getElementsByClassName('error-name')[0],
+                phoneErrorField = e.target.getElementsByClassName('error-phone')[0];
             //get form data
             let formData = Object.fromEntries(new FormData(e.target).entries());
             formData = {
@@ -75,6 +82,11 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             if (!validate(formData, constraints)) {
                 //all valid
+
+                emailErrorField.textContent = "";
+                phoneErrorField.textContent = "";
+                nameErrorField.textContent = "";
+
                 const nameJSON = JSON.stringify(formData.name);
                 const nameURL = JSON_to_URLEncoded(nameJSON, 'name');
                 const emailJSON = JSON.stringify(formData.email);
@@ -96,26 +108,20 @@ window.addEventListener('DOMContentLoaded', () => {
                     body.style.overflow = 'hidden';
                 })
             } else {
-                //error fields in form
-                const emailErrorField = e.target.getElementsByClassName('error-email')[0],
-                nameErrorField = e.target.getElementsByClassName('error-name')[0],
-                phoneErrorField = e.target.getElementsByClassName('error-phone')[0];
-                
                 //smth not valid
-
                 const notValid = validate(formData, constraints);
                 if (notValid.Email) {
                     emailErrorField.textContent = notValid.Email[1] ? notValid.Email[1] : notValid.Email[0];
                     emailInput.classList.add('form__error');
-                } 
+                } else emailErrorField.textContent = "";
                 if (notValid.phone) {
                     phoneErrorField.textContent = notValid.phone[1] ? notValid.phone[1] : notValid.phone[0];
                     phoneInput.classList.add('form__error');
-                } 
+                } else phoneErrorField.textContent = "";
                 if (notValid.name){
                     nameErrorField.textContent = notValid.name[1] ? notValid.name[1] : notValid.name[0];
                     nameInput.classList.add('form__error');
-                } 
+                } else nameErrorField.textContent = "";
             }
         });
     }
