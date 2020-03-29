@@ -3,43 +3,61 @@
         .header
             flex-direction: column
             justify-content: space-between
+            padding-top: 30px
             &__menu
-                justify-content: space-around
+                justify-content: space-between
                 width: 100%
-                margin-top: 20px
+                margin-top: 60px
+                font-size: 22px
             &__phone
-                margin: 20px auto 0 auto   
-                font-size: 20px
+                margin-top: 50px
+                display: block
+                text-align: right   
+                font-size: 24px
             &__logo
                  margin: 0 auto
     &__text
-        margin-top: 150px             
+        margin-top: 100px             
     .meeting
+        padding: 40px 0 30px 0
         &__descr
             margin-top: 27px
             font-size: 16px
             text-align: center
+            text-align: left
             &_big-width
                 margin-top: 40px;
-                width: 332px;
+                width: 432px;
                 line-height: 30px;
         &__points
             display: none
         &__title
+            text-align: center
+            margin-left: 0
+            width: 80%
+            height: 50px
             line-height: 39px
             &_big-width
+                width: 100%
+                text-align: left
+                height: 100px
                 font-size: 32px
     .people
         &__photos
+            margin-top: -30px
             width: 100%
         &__photo
             margin-top: 57px     
     .dream
+        padding: 40px 0 0 0
+        min-height: 450px
         &__wrapper
             img
-                width: 300px        
+                width: 450px        
     .prices
         &__wrapper
+            margin: 0 auto
+            width: 800px
             flex-wrap: wrap
         &__old-price
             font-size: 30px
@@ -48,18 +66,56 @@
         &__wrapper
             margin-top: 35px      
     .mobile
+        &__wrapper
+            height: 600px
         &__descr
             margin-left: 20px
-            width: 400px
+            width: 630px
     .partners
         &__wrapper
             img
                 width: 100px
     .footer
         &__element
-            font-size: 12px                                            
+            font-size: 12px    
+    .month
+        min-height: 548px
+        padding-bottom: 40px
+        &__descr
+            font-size: 20px   
+            margin: 10px auto  
+        &__wrapper-2
+            margin-top: 30px   
+    .question
+        display: flex
+        align-items: center
+        padding: 50px 0 0 0  
+        button
+            margin-bottom: 30px     
+    .reserve
+        padding-top: 60px
+        min-height: 280px
+        .form
+            width: 100%
+            margin: 0 auto
+            &__input
+                margin: 5px
+            &__button
+                margin: 5px   
+    .partners
+        &__wrapper
+            img
+                width: 150px
+    .footer
+        &__element
+            font-size: 17px               
 @media (max-width: 991px)
     .promo
+        .header
+            &__menu
+                font-size: 15px
+            &__phone
+                font-size: 20px    
         &__title1
             font-size: 70px
     .meeting
@@ -85,7 +141,53 @@
                 margin-top: 20px
                 text-align: right
                 margin-left: 100px
+    .people
+        padding: 40px 0 40px 0
+        &__photos
+            margin-top: -40px
+    .dream
+        min-height: 360px
+        &__text
+            margin-left: 30px
+        img
+            width: 350px
+        &__descr
+            text-align: left
+            width: 300px
 @media (max-width: 768px)
+    .control
+        min-height: 180px
+        padding: 50px 0 20px 0
+        &__quote
+            font-size: 30px
+        &__name
+            font-size: 30px
+    .mobile
+        &__subtitle
+            width: 420px
+        &__descr
+            margin-top: -60px
+            left: -80px
+            width: 310px
+    .promote
+        min-height: 270px
+        padding-top: 60px
+        .section-header
+            font-size: 30px
+        &__wrapper
+            width: 100%
+    .reserve
+        .form
+            width: 300px
+            flex-wrap: wrap
+            button
+                margin-bottom: 40px
+    .footer
+        &__element
+            font-size: 14px 
+@media (max-width: 768px)   
+    .nav
+        visibility: visible
     .promo
         min-height: 800px
         &__text
@@ -100,14 +202,18 @@
             justify-content: center
             &__menu
                 font-size: 17px
+                display: none
             &__phone
                 font-size: 20px
     .meeting
         &__title
             width: 200px
+            text-align: left
             &_big-width
-                width: 300px
+                font-size: 22px
+                width: 290px
         &__descr
+            text-align: left
             margin-top: 10px
             width: 200px
             &_big-width
@@ -119,8 +225,35 @@
             margin-left: -20px
             width: 550px
     .dream
+        padding-bottom: 30px
+        .section-header
+            margin-top: 20px
+        &__wrapper
+            justify-content: center
+            flex-wrap: wrap
         &__text
-            margin-left: 20px
+            text-align: center
+        &__descr
+            text-align: center
+            width: 500px
+            margin: 0 auto
+        &__name 
+            margin-top: 10px
+    .program
+        padding: 30px 0 10px 0
+        &__timetable
+            margin-top: 0
+        &__wrapper
+            margin-top: 0
+            flex-wrap: wrap
+        &__timetable
+            margin-top: 30px
+            margin-bottom: 30px
+    .control
+        &__quote
+            font-size: 23px
+        &__name
+            font-size: 30px
     .prices
         &__wrapper
             margin: 0 auto
@@ -142,16 +275,17 @@
             width: 240px
     .reserve
         .form
-            height: 400px
-            flex-wrap: wrap
+            flex-wrap: nowrap
             &__input
-                margin: 0 auto
-                margin-top: 20px
+                margin-top: 0
             &__button
-                margin-top: 30px
     .footer
+        .container
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
         &__element
-            width: 150px
+            width: 250px
             font-size: 12px  
     .promote
         &__wrapper
@@ -165,10 +299,44 @@
     .control
         &__quote
             font-size: 33px     
+@media (max-width: 575px)
+    .promo
+        &__dates
+            font-size: 22px
+        &__title2
+            font-size: 35px
+        &__title1
+            font-size: 45px
+        &__title3
+            font-size: 1.5rem            
+        .header
+            padding-top: 50px
+            &__menu
+                display: none
+                font-size: 33px 
+            &__phone
+                text-align: center
+                margin-top: 25px
+        .button
+            width: 100%                                                                           
+            margin: 20px auto    
+    .overlay
+        &__cross
+            line-height: 55px
+            top: 4px
+            font-size: 80px  
+    .partners
+        &__wrapper
+            margin-top: 0
+            justify-content: center
+            flex-wrap: wrap
+            img
+                width: 200px
+                margin: 10px 10px 10px 10px
 @media (max-width: 575px)                                                           
     .meeting
         &__block
-            margin-top: -80px
+            margin-top: 0px
             flex-wrap: wrap
         &__title
             width: 280px
@@ -191,6 +359,18 @@
             justify-content: center
             margin-left: 0
     .dream
+        img
+            width: 100%
+        &__text
+            h3.section-header 
+                font-size: 25px
+                margin-top: 10px
+                width: 100%
+        &__name
+            width: 100%            
+        &__descr
+            width: 100%
+            font-size: 17px
         &__wrapper
             flex-wrap: wrap
             justify-content: center
@@ -202,7 +382,13 @@
         &__timetable
             margin-top: 30px
             margin-bottom: 30px
+            font-size: 16px
+    .control
+        &__quote
+            font-size: 25px        
     .mobile
+        &__subtitle
+            font-size: 20px
         &__wrapper
             width: 300px
             flex-wrap: wrap
@@ -211,6 +397,7 @@
         &__descr
             top: 0
             left: 0
+            margin-top: 0
         &__img
             display: none
         &__iphone
@@ -219,6 +406,7 @@
             display: none
         &__item
             margin: 0 auto
+            line-height: 39px
     .month
         &__descr
             font-size: 20px
@@ -253,14 +441,28 @@
             justify-content: center
         &__element
             width: 200px
-    
+            font-size: 13px  
+    .menu
+        a
+            font-size: 18px
+            margin: 15px 0         
+    .prices
+        h3.section-header 
+            font-size: 25px   
+        &__status
+            font-size: 20px
+        &__old-price
+            font-size: 25px
+        &__new-price
+            font-size: 35px
+        &__wrapper
+            button
+                width: 66%
+        &__descr
+            &_large-text
+                button
+                    width: 73%                             
 
-            font-size: 33px   
+                                                                
 
-@media ( max-width:575px  )
-    .promo
-        .header
-            &__menu
-                display: none
-                font-size: 33px                                                                 
-
+                                                                                                                                           

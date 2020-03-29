@@ -5,6 +5,10 @@
     padding-top: 105px
     h3 
         color: #ffffff
+    &__form-block
+        text-align: center
+        p
+            margin-top: 10px
 .form
     display: flex
     justify-content: space-between
@@ -12,13 +16,18 @@
     color: #7f7f7f
     &__input
         padding: 0 30px
+        margin-right: 20px
         width: 261px
         height: 63px
         border: 1px solid #dedede
         background: none
         background-color: #ffffff
         color: #000000
+        margin-bottom: 0
+    &__error::-webkit-input-placeholder
+        color: red
     &__button
+        margin-bottom: 115px
         width: 261px
         height: 63px
         background: none
