@@ -155,6 +155,37 @@
             text-align: left
             width: 300px
 @media (max-width: 768px)
+    .control
+        min-height: 180px
+        padding: 50px 0 20px 0
+        &__quote
+            font-size: 30px
+        &__name
+            font-size: 30px
+    .mobile
+        &__subtitle
+            width: 420px
+        &__descr
+            margin-top: -60px
+            left: -80px
+            width: 310px
+    .promote
+        min-height: 270px
+        padding-top: 60px
+        .section-header
+            font-size: 30px
+        &__wrapper
+            width: 100%
+    .reserve
+        .form
+            width: 300px
+            flex-wrap: wrap
+            button
+                margin-bottom: 40px
+    .footer
+        &__element
+            font-size: 14px 
+@media (max-width: 768px)   
     .nav
         visibility: visible
     .promo
@@ -177,9 +208,12 @@
     .meeting
         &__title
             width: 200px
+            text-align: left
             &_big-width
-                width: 300px
+                font-size: 22px
+                width: 290px
         &__descr
+            text-align: left
             margin-top: 10px
             width: 200px
             &_big-width
@@ -191,8 +225,35 @@
             margin-left: -20px
             width: 550px
     .dream
+        padding-bottom: 30px
+        .section-header
+            margin-top: 20px
+        &__wrapper
+            justify-content: center
+            flex-wrap: wrap
         &__text
-            margin-left: 20px
+            text-align: center
+        &__descr
+            text-align: center
+            width: 500px
+            margin: 0 auto
+        &__name 
+            margin-top: 10px
+    .program
+        padding: 30px 0 10px 0
+        &__timetable
+            margin-top: 0
+        &__wrapper
+            margin-top: 0
+            flex-wrap: wrap
+        &__timetable
+            margin-top: 30px
+            margin-bottom: 30px
+    .control
+        &__quote
+            font-size: 23px
+        &__name
+            font-size: 30px
     .prices
         &__wrapper
             margin: 0 auto
@@ -214,16 +275,17 @@
             width: 240px
     .reserve
         .form
-            height: 400px
-            flex-wrap: wrap
+            flex-wrap: nowrap
             &__input
-                margin: 0 auto
-                margin-top: 20px
+                margin-top: 0
             &__button
-                margin-top: 30px
     .footer
+        .container
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
         &__element
-            width: 150px
+            width: 250px
             font-size: 12px  
     .promote
         &__wrapper
@@ -257,6 +319,21 @@
                 margin-top: 25px
         .button
             width: 100%                                                                           
+            margin: 20px auto    
+    .overlay
+        &__cross
+            line-height: 55px
+            top: 4px
+            font-size: 80px  
+    .partners
+        &__wrapper
+            margin-top: 0
+            justify-content: center
+            flex-wrap: wrap
+            img
+                width: 200px
+                margin: 10px 10px 10px 10px
+@media (max-width: 575px)                                                           
     .meeting
         &__block
             margin-top: 0px
