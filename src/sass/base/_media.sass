@@ -15,31 +15,45 @@
     &__text
         margin-top: 150px             
     .meeting
+        padding: 40px 0 30px 0
         &__descr
             margin-top: 27px
             font-size: 16px
             text-align: center
+            text-align: left
             &_big-width
                 margin-top: 40px;
-                width: 332px;
+                width: 432px;
                 line-height: 30px;
         &__points
             display: none
         &__title
+            text-align: center
+            margin-left: 0
+            width: 80%
+            height: 50px
             line-height: 39px
             &_big-width
+                width: 100%
+                text-align: left
+                height: 100px
                 font-size: 32px
     .people
         &__photos
+            margin-top: -30px
             width: 100%
         &__photo
             margin-top: 57px     
     .dream
+        padding: 40px 0 0 0
+        min-height: 450px
         &__wrapper
             img
-                width: 300px        
+                width: 450px        
     .prices
         &__wrapper
+            margin: 0 auto
+            width: 800px
             flex-wrap: wrap
         &__old-price
             font-size: 30px
@@ -48,16 +62,49 @@
         &__wrapper
             margin-top: 35px      
     .mobile
+        &__wrapper
+            height: 600px
         &__descr
             margin-left: 20px
-            width: 400px
+            width: 630px
     .partners
         &__wrapper
             img
                 width: 100px
     .footer
         &__element
-            font-size: 12px                                            
+            font-size: 12px    
+    .month
+        min-height: 548px
+        padding-bottom: 40px
+        &__descr
+            font-size: 20px   
+            margin: 10px auto  
+        &__wrapper-2
+            margin-top: 30px   
+    .question
+        display: flex
+        align-items: center
+        padding: 50px 0 0 0  
+        button
+            margin-bottom: 30px     
+    .reserve
+        padding-top: 60px
+        min-height: 280px
+        .form
+            width: 100%
+            margin: 0 auto
+            &__input
+                margin: 5px
+            &__button
+                margin: 5px   
+    .partners
+        &__wrapper
+            img
+                width: 150px
+    .footer
+        &__element
+            font-size: 17px               
 @media (max-width: 991px)
     .promo
         &__title1
@@ -85,6 +132,19 @@
                 margin-top: 20px
                 text-align: right
                 margin-left: 100px
+    .people
+        padding: 40px 0 40px 0
+        &__photos
+            margin-top: -40px
+    .dream
+        min-height: 360px
+        &__text
+            margin-left: 30px
+        img
+            width: 350px
+        &__descr
+            text-align: left
+            width: 300px
 @media (max-width: 768px)
     .promo
         min-height: 800px
