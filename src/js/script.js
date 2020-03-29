@@ -97,4 +97,17 @@ window.addEventListener('DOMContentLoaded', () => {
             menuOverlay.classList.remove('window_active'); 
         });
     }
+    // flags in the input
+    function flagsInput(selector){
+        let input = document.querySelector(selector);
+        window.intlTelInput(input,{
+            utilsScript: "utils.js",
+            autoPlaceholder: "off",
+            // initialCountry: "auto",
+            separateDialCode: true,
+            dropdownContainer: document.body
+        });
+    }
+    flagsInput("#phone");
+    flagsInput("#phone-row");
 });
