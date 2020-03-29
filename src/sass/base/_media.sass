@@ -320,11 +320,6 @@
         .button
             width: 100%                                                                           
             margin: 20px auto    
-    .overlay
-        &__cross
-            line-height: 55px
-            top: 4px
-            font-size: 80px  
     .partners
         &__wrapper
             margin-top: 0
@@ -332,8 +327,7 @@
             flex-wrap: wrap
             img
                 width: 200px
-                margin: 10px 10px 10px 10px
-@media (max-width: 575px)                                                           
+                margin: 10px 10px 10px 10px                                                          
     .meeting
         &__block
             margin-top: 0px
@@ -461,8 +455,21 @@
         &__descr
             &_large-text
                 button
-                    width: 73%                             
-
+                    width: 73%      
+    .overlay
+        &__modal
+            &_active
+                width: 85%
+                h3.section-header 
+                    font-size: 25px
+        form
+            input
+                width: 100%
+        button
+            width: 100%                                                           
+        &__cross
+            left: -25px
+            top: -25px
                                                                 
 
                                                                                                                                            
