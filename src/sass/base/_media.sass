@@ -10,7 +10,7 @@
                 margin-top: 60px
                 font-size: 22px
             &__phone
-                margin-top: 50px
+                margin: 50px 3px 0 3px
                 display: block
                 text-align: right   
                 font-size: 24px
@@ -215,6 +215,10 @@
     .footer
         &__element
             font-size: 14px 
+    .overlay
+        .form
+            width: 235px
+            margin: 15px auto        
 @media (max-width: 767px)   
     .nav
         visibility: visible
@@ -511,18 +515,20 @@
                     width: 73%      
     .overlay
         &__modal
+            .overlay__cross
+                top: -25px
+                left: 285px
             &_active
-                width: 85%
+                width: 300px
                 h3.section-header 
-                    font-size: 25px
+                    font-size: 25px                                  
+    #overlay
+        width: 300px                
         form
             input
                 width: 100%
         button
             width: 100%                                                           
-        &__cross
-            left: -25px
-            top: -25px
                                                                 
 
                                                                                                                                            
