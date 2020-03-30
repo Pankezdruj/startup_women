@@ -10,7 +10,7 @@
                 margin-top: 60px
                 font-size: 22px
             &__phone
-                margin-top: 50px
+                margin: 50px 3px 0 3px
                 display: block
                 text-align: right   
                 font-size: 24px
@@ -171,6 +171,19 @@
                 position: relative
                 right: 0
                 bottom: 5px
+    .mobile
+        &__descr
+            position: absolute
+            top: 50px
+            width: 400px
+            margin-left: 100px
+            width: 350px
+        &__subtitle
+            width: 250px   
+    .footer
+        &__element
+            font-size: 14px         
+                    
 
 @media (max-width: 768px)
     .control
@@ -182,11 +195,10 @@
             font-size: 30px
     .mobile
         &__subtitle
-            width: 420px
+            width: 250px
         &__descr
-            margin-top: -60px
-            left: -80px
-            width: 310px
+            margin-top: 0
+            width: 310px    
     .promote
         min-height: 270px
         padding-top: 60px
@@ -203,6 +215,10 @@
     .footer
         &__element
             font-size: 14px 
+    .overlay
+        .form
+            width: 235px
+            margin: 15px auto        
 @media (max-width: 767px)   
     .nav
         visibility: visible
@@ -218,11 +234,13 @@
             display: flex
             flex-wrap: wrap
             justify-content: center
+            margin-top: 50px
             &__menu
                 font-size: 17px
                 display: none
             &__phone
                 font-size: 20px
+                top: 30px
     .meeting
         &__title
             width: 200px
@@ -287,15 +305,17 @@
         &__status 
             font-size: 25px
     .mobile
-        min-height: 1000px
+        height: 1000px
         &__descr
-            margin-top: 485px
+            margin-top: 535px
             margin-left: -190px
             width: 340px
         &__iphone
             left: -130px
         &__img
             left: 110px
+        &__subtitle
+            font-size: 18px    
     .reserve
         .form
             flex-wrap: nowrap
@@ -309,7 +329,7 @@
             justify-content: center
         &__element
             width: 250px
-            font-size: 12px  
+            font-size: 14px  
     .promote
         &__wrapper
             width: 100%
@@ -340,6 +360,7 @@
             &__phone
                 text-align: center
                 margin-top: 25px
+                display: none
         .button
             width: 100%                                                                           
             margin: 20px auto    
@@ -352,6 +373,7 @@
                 width: 200px
                 margin: 10px 10px 10px 10px                                                          
     .meeting
+        padding: 55px 0 30px 0
         &__block
             margin-top: 0px
             flex-wrap: wrap
@@ -370,6 +392,7 @@
         &__wrapper
             width: 300px
     .people
+        padding: 55px 0 40px 0
         &__photos
             flex-wrap: wrap
             width: 100%
@@ -404,17 +427,22 @@
         &__quote
             font-size: 25px        
     .mobile
+        height: 500px
+        margin-top: 10px
         &__subtitle
             font-size: 20px
         &__wrapper
             width: 300px
             flex-wrap: wrap
             justify-content: center
-            margin-left: 100px
+            margin-left: 0
         &__descr
             top: 0
-            left: 0
+            left: 65%
             margin-top: 0
+            width: 300px
+            h3.section-header 
+                text-align: center
         &__img
             display: none
         &__iphone
@@ -423,7 +451,7 @@
             display: none
         &__item
             margin: 0 auto
-            line-height: 39px
+            line-height: 39px  
     .month
         &__descr
             font-size: 20px
@@ -431,6 +459,10 @@
             display: flex
         &__element
             height: 204px
+        &__wrapper-1
+            flex-direction: column
+        &__wrapper-2
+            flex-direction: column        
     .question
         padding: 50px 0 20px 0
     .promote
@@ -482,19 +514,23 @@
                 button
                     width: 73%      
     .overlay
-        &__modal
+        &__modal 
+            &-confirmation
+                width: 300px
+            .overlay__cross
+                top: -25px
+                left: 285px
             &_active
-                width: 85%
+                width: 300px
                 h3.section-header 
-                    font-size: 25px
+                    font-size: 25px                                                     
+    #overlay
+        width: 300px                
         form
             input
                 width: 100%
         button
             width: 100%                                                           
-        &__cross
-            left: -25px
-            top: -25px
                                                                 
 
                                                                                                                                            
