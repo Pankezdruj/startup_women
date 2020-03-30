@@ -171,6 +171,16 @@
                 position: relative
                 right: 0
                 bottom: 5px
+    .mobile
+        &__descr
+            position: absolute
+            top: 50px
+            width: 400px
+            margin-left: 100px
+            width: 350px
+        &__subtitle
+            width: 250px    
+                    
 
 @media (max-width: 768px)
     .control
@@ -182,10 +192,9 @@
             font-size: 30px
     .mobile
         &__subtitle
-            width: 420px
+            width: 250px
         &__descr
-            margin-top: -60px
-            left: -80px
+            margin-top: 0
             width: 310px
     .promote
         min-height: 270px
@@ -287,15 +296,17 @@
         &__status 
             font-size: 25px
     .mobile
-        min-height: 1000px
+        height: 1000px
         &__descr
-            margin-top: 485px
+            margin-top: 535px
             margin-left: -190px
             width: 340px
         &__iphone
             left: -130px
         &__img
             left: 110px
+        &__subtitle
+            font-size: 18px    
     .reserve
         .form
             flex-wrap: nowrap
@@ -404,17 +415,22 @@
         &__quote
             font-size: 25px        
     .mobile
+        height: 500px
+        margin-top: 10px
         &__subtitle
             font-size: 20px
         &__wrapper
             width: 300px
             flex-wrap: wrap
             justify-content: center
-            margin-left: 100px
+            margin-left: 0
         &__descr
             top: 0
-            left: 0
+            left: 65%
             margin-top: 0
+            width: 300px
+            h3.section-header 
+                text-align: center
         &__img
             display: none
         &__iphone
@@ -423,7 +439,7 @@
             display: none
         &__item
             margin: 0 auto
-            line-height: 39px
+            line-height: 39px  
     .month
         &__descr
             font-size: 20px
